@@ -26,9 +26,6 @@ export default function Home() {
           />
           <h1 className="text-5xl font-bold text-blue-900 mb-4 font-sans">MyClinical Dashboard</h1>
           <p className="text-gray-700 text-lg mb-8">Gerencie atendimentos e agendamentos com eficiência e praticidade.</p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-md transition-transform transform hover:scale-105">
-            Acessar Painel
-          </button>
         </div>
         {data ? (
           <pre className="bg-gray-100 p-5 rounded-lg text-left text-sm overflow-auto border border-gray-300 shadow-inner mt-6">
