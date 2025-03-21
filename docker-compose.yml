@@ -122,7 +122,7 @@ services:
       - db
       - redis
     command: >
-      sh -c "until nc -z -v -w30 db 5432; do sleep 3; done && gunicorn backend.wsgi:application --bind 0.0.0.0:8000"
+      command: sh -c "chmod +x /projeto/scripts/entrypoint.sh && /projeto/scripts/entrypoint.sh"
 
     networks:
       - app_network
@@ -138,7 +138,7 @@ services:
       - ./frontend:/app
       - /app/node_modules
     environment:
-      - NODE_ENV=- NODE_ENV=production
+      - NODE_ENV=production
       - NEXT_DEV=true
       - NEXT_PUBLIC_API_URL=http://backend:8000
     depends_on:

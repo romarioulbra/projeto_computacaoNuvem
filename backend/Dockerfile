@@ -6,7 +6,7 @@ WORKDIR /projeto
 
 # Instala dependências do sistema (incluindo netcat e cliente PostgreSQL)
 RUN apt-get update && apt-get install -y netcat-openbsd postgresql-client && rm -rf /var/lib/apt/lists/*
-
+RUN apt-get update && apt-get install -y postgresql-client
 # Copiar arquivos de dependências primeiro (para aproveitar cache do Docker)
 COPY requirements.txt .
 
