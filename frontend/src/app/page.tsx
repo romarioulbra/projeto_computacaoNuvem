@@ -14,32 +14,28 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-blue-300 p-8">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-200 to-blue-500 p-8">
       <div className="bg-white shadow-2xl rounded-2xl p-10 max-w-3xl w-full text-center">
         <div className="flex flex-col items-center">
           <Image
             src="/clinic-logo.png"
             alt="MyClinical Logo"
-            width={100}
-            height={100}
-            className="mb-6"
+            width={120}
+            height={120}
+            className="mb-6 drop-shadow-lg"
           />
-          <h1 className="text-4xl font-bold text-blue-900 mb-3 font-sans">MyClinical Dashboard</h1>
-          <p className="text-gray-600 text-lg mb-8">Gerencie atendimentos e agendamentos com eficiência e praticidade.</p>
-          <Image
-            src="/medical-dashboard.svg"
-            alt="Dashboard Ilustrativo"
-            width={450}
-            height={280}
-            className="mb-8 rounded-lg shadow-md"
-          />
+          <h1 className="text-5xl font-bold text-blue-900 mb-4 font-sans">MyClinical Dashboard</h1>
+          <p className="text-gray-700 text-lg mb-8">Gerencie atendimentos e agendamentos com eficiência e praticidade.</p>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-full shadow-md transition-transform transform hover:scale-105">
+            Acessar Painel
+          </button>
         </div>
         {data ? (
-          <pre className="bg-gray-100 p-5 rounded-lg text-left text-sm overflow-auto border border-gray-300 shadow-sm">
+          <pre className="bg-gray-100 p-5 rounded-lg text-left text-sm overflow-auto border border-gray-300 shadow-inner mt-6">
             {JSON.stringify(data, null, 2)}
           </pre>
         ) : (
-          <p className="text-gray-600 text-lg">Carregando dados...</p>
+          <p className="text-gray-600 text-lg mt-6">Carregando dados...</p>
         )}
       </div>
     </div>
