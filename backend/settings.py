@@ -20,7 +20,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'corsheaders',
-    'authentication',  # Nossa app de autenticação
+    'authentication', 
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -31,6 +32,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -78,3 +80,16 @@ SIMPLE_JWT = {
 
 # CORS
 CORS_ALLOW_ALL_ORIGINS = True
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "AUTH_COOKIE": "jwt-access",
+}
+
+AUTH_USER_MODEL = "authentication.CustomUser"
+
